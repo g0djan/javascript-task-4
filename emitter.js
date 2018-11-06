@@ -45,7 +45,7 @@ function getEmitter() {
         off: function (event, context) {
             console.info(event, context);
             Array.from(events.keys()).forEach(k => {
-                if (k.startsWith(event)) {
+                if (k === event || k.startsWith(event + '.')) {
                     events.get(k).delete(context);
                 }
             });
