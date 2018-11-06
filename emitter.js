@@ -64,7 +64,7 @@ function getEmitter() {
             for (let i = splitted.length; i > 0; --i) {
                 const partEvent = splitted.slice(0, i).join('.');
                 if (events.has(partEvent)) {
-                    Array.from(events.get(partEvent).entries()).forEach(([key, val]) => {
+                    Array.from(events.get(partEvent).values()).forEach(val => {
                         val.forEach(f => f());
                     });
                 }
